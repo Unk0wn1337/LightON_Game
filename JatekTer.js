@@ -8,8 +8,12 @@ class JatekTer{
         const szuloELEM = $("#JatekTer");
         this.#meret = meret * meret;
         for (let index = 0; index < this.#meret; index++) {
-            this.#allapotLista[index] = Math.round(Math.random() * 1);
-        }
+            if (Math.random() <= 0.2) {
+              this.#allapotLista[index] = 0;
+            } else {
+              this.#allapotLista[index] = 1;
+            }
+          }
         for (let index = 0; index < this.#allapotLista.length; index++) {
             const lampi = new Lampa(index, this.#allapotLista[index], szuloELEM);
             
@@ -20,10 +24,11 @@ class JatekTer{
 
 
     }
-    #szomszedokKeresese(id){
+    #szomszedokKeresese(){
 
     }
     #init(){
+        
 
     }
     #ellenorzes(){
